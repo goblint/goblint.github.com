@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" type="image/png" href="images/goblint_icon.png" />
+<title>Goblint: Download</title>
+<link href="gobstyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="wrap">
+    <div id="head"> 
+      <div id="inst_logo"> <a href="http://www.cs.ut.ee/eng"><img src="images/TartuLogo.png" alt="Tartu Logo" width="27" height="40" /></a> &nbsp; <a href="http://www.in.tum.de/en.html"> <img src="images/TUMLogo.png" alt="TUM Logo" width="79" height="40" /></a> </div>
+      <a href="index.html"><img src="images/goblint.png" alt="Goblint" width="225" height="37" id="goblint" /></a>
+      <ul id="navbar">
+        <li class="current">Download</li>
+        <li><a href="intro.html">Overview</a></li>
+        <li><a href="docs.html">Papers</a></li>
+      </ul>
+    </div>
+    <div id="container">
+      <h2>Download and Installation</h2>
+      <p>The latest stable version of the analyzer is available below as a source distribution. Since the analyzer is rapidly developing, we recommend using the development versions of Goblint and CIl as described on our <a href="http://github.com/goblint/analyzer/wiki">developer pages</a> on GitHub.</p>
+      <h3>Command-line Tool</h3>
+      <p>It is very simple to install goblint on a Debian-based Linux distribution. 
+      <ol>
+        <li>Download and extract the following archive: <a href="files/goblint.tgz">goblint.tgz</a>.
+        <li>Follow the instructions in the README file. Basically, it should suffice to write:
+<pre>
+sudo apt-get install ocaml-findlib libounit-ocaml-dev libxml-light-ocaml-dev
+./build_all.sh</pre>
+      <li>You can test if the analyzer works by running it on the test programs; for example:
+      <pre>./goblint tests/regression/04-mutex/01-simple_rc.c</pre>
+     </ol>
+      If this works, you are ready to use the analyzer.  In order to analyze larger C projects, you have to give all source files as parameter to the analyzer.
+      <h3>The Eclipse Plug-In</h3>
+      <p>There is  a preliminary version of an Eclipse plug-in available. You need to have Eclipse and the CDT installed. Then, you can obtain the plug-in through the following update site:</p>
+    <pre>    http://goblint.in.tum.de/plugin</pre>
+      <p>You can either set it through <em>Help &rarr; Install New Software ...&rarr; Add ...</em> or by going to the <a href="http://goblint.in.tum.de/plugin">update site</a> and downloading it manually and placing it the Eclipse plug-in folder. Then, you need to indicate the location of the executible through <em>Window &rarr; Preferences... &rarr; C/C++ &rarr; Goblin</em>. Finally, you may need to reset the C/C++ perspective  (<em>Window &rarr; Reset Perspective ...</em>).</p>
+      <p>When the plug-in is installed. You can call the analyzer by right-clicking in a source file and selecting &quot;Run the Goblin&quot; Unfortunately, this only works if you start the project as a Makefile project. Note that the plug-in feeds all C-files of a project to the analyzer irrespective of which file is active.</p>
+    </div>
+  </div>
+</body>
+</html>

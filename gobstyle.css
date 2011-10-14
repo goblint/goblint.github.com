@@ -1,0 +1,88 @@
+html {
+	overflow-y: scroll;
+	height: 100%;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #DAD7CB;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: 0;
+}
+img.screen {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+a {
+	text-decoration:none;
+	color: #114cce;
+}
+a:hover {
+	color:#A2AD00;
+}
+
+h2 {
+	color: #e37222;
+}
+
+h3 {
+	color: #e37222;
+}
+#container li {
+	margin-top: 0.5ex;
+}
+
+
+#wrap {
+	background-color: #FFF;
+	width: 45em;
+	padding-left: 2em;
+	padding-right: 2em;
+	margin: 0 auto;
+	min-height: 100%;
+	height: auto;
+}
+
+#head {
+	padding: 2em 0 1em;
+	margin-bottom: 3ex;
+	color: #114cce;
+	border-bottom-width: thick;
+	border-bottom-style: double;
+	border-bottom-color: #DAD7CB;
+}
+#goblint_logo {
+	width: 80%;
+	float: left;
+}
+img#goblint {
+	vertical-align: -1px;
+}
+#inst_logo {
+	float: right;
+}
+#container {
+	clear: both;
+	text-align: justify;
+	padding-bottom: 1pt;	
+}
+
+ul#navbar {
+	display: inline;
+	margin: 0;
+    padding-left: 1ex;
+}
+ul#navbar li {
+	display: inline;
+	padding-right: 1ex;
+}
+ul#navbar li.current {
+	text-decoration: overline;
+}
