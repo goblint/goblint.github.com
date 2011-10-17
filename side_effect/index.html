@@ -1,0 +1,95 @@
+<html>
+<style type="text/css">
+pre {font-family:"Lucida Console", Monaco, monospace;
+     background-color:#f6f6f6;
+     border-style: dotted;
+     border-width:1px;
+     padding:8px;}
+body{font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+     font-size:18px;
+     background-color:#fff}
+h2  {font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+     padding:6px;
+     margin:0;
+     color:#666;}
+#inst_logo {
+     float: right;}
+hr  {color:#aaa;
+     background-color:#aaa;
+     height:1px;
+     border: none;}
+</style>
+<body>
+<div id="inst_logo"> 
+    <a href="http://www.cs.ut.ee/eng">
+        <img src="../images/TartuLogo.png" alt="Tartu Logo" width="27" height="40" />
+    </a> &nbsp; 
+    <a href="http://www.in.tum.de/en.html"> 
+        <img src="../images/TUMLogo.png" alt="TUM Logo" width="79" height="40" />
+    </a> 
+</div>
+     
+<h2>How to reproduce benchmarking results?</h2>
+<hr />
+<ol start=0>
+<li> Install &amp; configure Ocaml >=3.11 and Ruby
+<pre>
+???
+</pre>
+<li> Create a directory, where we will install Goblint and some required libraries.
+<pre>
+mkdir goblint_stuff
+cd goblint_stuff
+</pre>
+<li> Download and prepare the <tt>xml-light</tt> library:
+<pre>
+cvs -d:pserver:anonymous@cvs.motion-twin.com:/cvsroot login
+(enter empty password)
+cvs -d:pserver:anonymous@cvs.motion-twin.com:/cvsroot co ocaml/xml-light
+mv ocaml/xml-light xml-light
+rm -rf ocaml
+cd xml-light
+make
+make opt
+cd ..
+</pre>
+<li> Download and prepare the <tt>cil</tt> library:
+<pre>
+git clone git://github.com/kerneis/cil
+cd cil
+./configure
+make
+cd ..
+</pre>
+<li> Download our benchmarking code:
+<pre>
+git clone git://github.com/goblint/bench.git
+</pre>
+<li> Download and prepare the <tt>Goblint</tt> (single-threaded version):
+<pre>
+git clone -n git://github.com/goblint/analyzer.git
+cd analyzer/
+git checkout side-effect.fun
+./configure
+make opt
+</pre>
+<li> Run &amp; Review single-threaded results:
+<pre>
+./scripts/update_bench.rb 
+firefox tests/bench_result/index.html &
+</pre>
+<li> Download and prepare the <tt>Goblint</tt> (normal, multi-threaded version):
+<pre>
+git checkout 367902c8b534a6cc18ccc4affb962353d573b99a
+./configure
+make opt
+./scripts/update_bench.rb 
+</pre>
+<li> Run &amp; Review multi-threaded results:
+<pre>
+./scripts/update_bench.rb 
+firefox tests/bench_result/index.html &
+</pre>
+</ol>
+</body>
+</html>
