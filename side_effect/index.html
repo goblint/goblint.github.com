@@ -23,7 +23,7 @@ hr  {color:#aaa;
 <div id="inst_logo"> 
     <a href="http://www.cs.ut.ee/eng">
         <img src="../images/TartuLogo.png" alt="Tartu Logo" width="27" height="40" />
-    </a> &nbsp; 
+    </a> &nbsp;&amp;
     <a href="http://www.in.tum.de/en.html"> 
         <img src="../images/TUMLogo.png" alt="TUM Logo" width="79" height="40" />
     </a> 
@@ -32,7 +32,7 @@ hr  {color:#aaa;
 <h2>How to reproduce benchmarking results?</h2>
 <hr />
 <ol start=0>
-<li> Install &amp; configure Ocaml >=3.11 and Ruby
+<li> Install &amp; configure Ocaml (&ge; 3.12.1) and Ruby
 <pre>
 ???
 </pre>
@@ -65,30 +65,23 @@ cd ..
 <pre>
 git clone git://github.com/goblint/bench.git
 </pre>
-<li> Download and prepare the <tt>Goblint</tt> (single-threaded version):
+<li> Download and prepare the <tt>Goblint</tt>:
 <pre>
-git clone -n git://github.com/goblint/analyzer.git
+git clone git://github.com/goblint/analyzer.git:
+git checkout 8397e45088e4ce88f6c75d871b02e0268af0ee21
 cd analyzer/
-git checkout side-effect.fun
 ./configure
 make opt
 </pre>
-<li> Run &amp; Review single-threaded results:
+<li> Run &amp; Review results:
 <pre>
-./scripts/update_bench.rb 
+./scripts/update_bench_side.rb 
 firefox tests/bench_result/index.html &
 </pre>
-<li> Download and prepare the <tt>Goblint</tt> (normal, multi-threaded version):
+<li> Accept Paper:
 <pre>
-git checkout 367902c8b534a6cc18ccc4affb962353d573b99a
-./configure
-make opt
-</pre>
-<li> Run &amp; Review multi-threaded results:
-<pre>
-./scripts/update_bench.rb 
-firefox tests/bench_result/index.html &
-</pre>
+???
+</pre>  
 </ol>
 </body>
 </html>
