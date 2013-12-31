@@ -1,0 +1,58 @@
+<html>
+<style type="text/css">
+pre {font-family:"Lucida Console", Monaco, monospace;
+     background-color:#f6f6f6;
+     border-style: dotted;
+     border-width:1px;
+     padding:8px;}
+body{font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+     font-size:18px;
+     background-color:#fff}
+h2  {font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+     padding:6px;
+     margin:0;
+     color:#666;}
+#inst_logo {
+     float: right;}
+hr  {color:#aaa;
+     background-color:#aaa;
+     height:1px;
+     border: none;}
+</style>
+<body>
+<div id="inst_logo"> 
+    <a href="http://www.cs.ut.ee/eng"><img src="../images/TartuLogo.png" alt="Tartu Logo" width="27" height="40" /></a>
+    &nbsp;
+    <a href="http://www.in.tum.de/en.html"><img src="../images/TUMLogo.png" alt="TUM Logo" width="79" height="40" /></a> 
+</div>
+     
+<h2>How to reproduce benchmarking results?</h2>
+<hr />
+<ol start=0>
+<li> Install &amp; configure Ocaml (&ge; 4.00.1), Batteries (&ge; 2.0) and Ruby
+<pre>
+???
+</pre>
+<li> Prepare to build Goblint from Sources
+<pre>
+see <a href="http://goblint.in.tum.de/download.html">http://goblint.in.tum.de/download.html</a>
+</pre>
+<li> Download and prepare the <tt>Goblint</tt> for Part 1 of benchmarks:
+<pre>
+git clone -b side-effect2 git://github.com/goblint/analyzer.git analyzer1
+cd analyzer1/
+make 
+./runbench.sh
+cd ..
+</pre>
+<li> Download and prepare the <tt>Goblint</tt> for Part 2 of benchmarks:
+<pre>
+git clone -b box-operator git://github.com/goblint/analyzer.git analyzer2
+cd analyzer2/
+make 
+./runbench.sh
+cd ..
+</pre>
+</ol>
+</body>
+</html>
