@@ -19,6 +19,9 @@ hr  {color:#aaa;
      height:1px;
      border: none;}
 </style>
+<head>
+  <title>Frameworks for analyzing multi-threaded C</title>
+</head>
 <body>
 <div id="inst_logo"> 
     <a href="http://www.cs.ut.ee/eng"><img src="../images/TartuLogo.png" alt="Tartu Logo" width="27" height="40" /></a>
@@ -33,26 +36,38 @@ hr  {color:#aaa;
 <pre>
 ???
 </pre>
-<li> Prepare to build Goblint from Sources
+</li><li> Prepare to build Goblint from Sources
 <pre>
 see <a href="http://goblint.in.tum.de/download.html">http://goblint.in.tum.de/download.html</a>
 </pre>
-<li> Download and prepare the <tt>Goblint</tt> for Part 1 of benchmarks:
+</li><li> Download and prepare the <tt>Goblint</tt> for Part 1 of benchmarks:
 <pre>
 git clone -b side-effect2 git://github.com/goblint/analyzer.git analyzer1
 cd analyzer1/
-make 
-./runbench.sh
-cd ..
+make
 </pre>
-<li> Download and prepare the <tt>Goblint</tt> for Part 2 of benchmarks:
+</li><li> Run Part 1 of benchmarks:
+<pre>
+cd bench1/ 
+./runbench.sh
+cd ../..
+</pre>
+</li><li> Download and prepare the <tt>Goblint</tt> for Part 2 of benchmarks:
 <pre>
 git clone -b box-operator git://github.com/goblint/analyzer.git analyzer2
 cd analyzer2/
 make 
-./runbench.sh
-cd ..
 </pre>
+</li><li> Run Part 2 of benchmarks:
+<pre>
+cd bench2/wcet_bench
+./runbench.sh
+cd ../..
+cd bench2/secretbench
+./runbench.sh
+cd ../..
+</pre>
+</li>
 </ol>
 </body>
 </html>
