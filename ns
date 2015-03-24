@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:oslc="http://open-services.net/ns/core#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#" 
+    xmlns:oslcasset="http://open-services.net/ns/asset#"
+    xmlns:goblint="http://goblint.in.tum.de/ns#"> 
+    
+  <owl:Ontology rdf:about="goblint:">
+  	<dcterms:title>The Goblint OSLC Vocabulary
+  	</dcterms:title>
+  	<dcterms:description rdf:parseType="Literal">
+  		All vocabulary URIs used by the Goblint OSLC adaptor
+  	</dcterms:description>
+  </owl:Ontology>            
+  
+  <rdf:Description>
+    <oslc:describes rdf:resource="goblint:GoblintResource"/>
+    <dcterms:title rdf:parseType="Literal">The Goblint OSLC resource</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+    <oslc:creationFactory rdf:nodeID="A1"/>
+    <oslc:creationFactory rdf:nodeID="A2"/>
+    <oslc:creationFactory rdf:nodeID="A3"/>
+    <oslc:creationFactory rdf:nodeID="A4"/>
+    <oslc:creationFactory rdf:nodeID="A5"/>
+    <oslc:creationFactory rdf:nodeID="A6"/>
+    <oslc:creationFactory rdf:nodeID="A7"/>
+  </rdf:Description>
+      
+  <rdf:Class rdf:about="goblint:GoblintResource">
+    <rdfs:isDefinedBy rdf:resource="goblint:GoblintResource"/>
+    <rdfs:lable>The Goblint OSLC resource</rdfs:lable>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+  </rdf:Class>
+
+  <rdf:Class rdf:about="goblint:ConfFileAsset">
+    <rdfs:isDefinedBy rdf:resource="goblint:ConfFileAsset"/>
+    <rdfs:lable>Plain folder asset</rdfs:lable>
+    <rdfs:subClassOf>oslcasset:Asset</rdfs:subClassOf>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+  </rdf:Class>
+
+  <rdf:Class rdf:about="goblint:SourceFolderAsset">
+    <rdfs:isDefinedBy rdf:resource="goblint:SourceFolderAsset"/>
+    <rdfs:lable>Source code folder asset</rdfs:lable>
+    <rdfs:subClassOf>oslcasset:Asset</rdfs:subClassOf>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+  </rdf:Class>
+
+  <rdf:Class rdf:about="goblint:StoredInvariantAsset">
+    <rdfs:isDefinedBy rdf:resource="goblint:StoredInvariantAsset"/>
+    <rdfs:lable>Source code folder asset</rdfs:lable>
+    <rdfs:subClassOf>oslcasset:Asset</rdfs:subClassOf>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+  </rdf:Class>
+  
+  <rdf:Class rdf:about="goblint:GoblintResultWarning">
+    <rdfs:isDefinedBy rdf:resource="goblint:GoblintResultWarning"/>
+    <rdfs:lable>Goblint analysis result: HTML</rdfs:lable>
+    <rdfs:subClassOf>oslcqm:TestResult</rdfs:subClassOf>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+  </rdf:Class>
+  
+  <rdf:Class rdf:about="goblint:GoblintResultXML">
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+    <rdfs:isDefinedBy rdf:resource="goblint:GoblintResultXML"/>
+    <rdfs:subClassOf>oslcqm:TestResult</rdfs:subClassOf>
+    <rdfs:lable>Goblint analysis result: XML</rdfs:lable>
+  </rdf:Class>
+    
+  <rdf:Class rdf:about="goblint:GoblintResultHTML">
+    <rdfs:lable>Goblint analysis result: HTML</rdfs:lable>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+    <rdfs:isDefinedBy rdf:resource="goblint:GoblintResultHTML"/>
+    <rdfs:subClassOf>oslcqm:TestResult</rdfs:subClassOf>
+  </rdf:Class>
+
+  <rdf:Class rdf:about="goblint:GoblintResultStoredInvariant">
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+    <rdfs:isDefinedBy rdf:resource="goblint:GoblintResultStoredInvariant"/>
+    <rdfs:lable>Goblint analysis result: HTML</rdfs:lable>
+    <rdfs:subClassOf>oslcqm:TestResult</rdfs:subClassOf>
+  </rdf:Class>
+  
+  <rdf:Class rdf:about="goblint:GoblintAnalysisJob">
+    <rdfs:isDefinedBy rdf:resource="goblint:GoblintAnalysisJob"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#ResourceShape"/>
+    <rdfs:lable>Goblint analysis job.</rdfs:lable>
+  </rdf:Class>
+  
+  
+  <rdf:Description>
+    <dcterms:description rdf:parseType="Literal">A URI to configuration file.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">confFileURI</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+    <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+    <oslc:propertyDefinition rdf:resource="goblint:confFileURI"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>confFileURI</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:ConfFileAsset"/>
+  </rdf:Description>
+
+  <rdf:Description>
+    <dcterms:description rdf:parseType="Literal">A URI to configuration file.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">sourceFolderURI</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+    <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+    <oslc:propertyDefinition rdf:resource="goblint:sourceFolderURI"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>confFileURI</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:SourceFolderAsset"/>
+  </rdf:Description>
+
+  <rdf:Description>
+    <dcterms:description rdf:parseType="Literal">A URI to the stored invariants.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">storedInvariantFiileURI</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+    <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+    <oslc:propertyDefinition rdf:resource="goblint:storedInvariantFiileURI"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>confFileURI</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:StoredInvariantAsset"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">Textual description of the warning.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">goblintResultWarningDescription</dcterms:title>
+    <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <oslc:propertyDefinition rdf:resource="goblint:GoblintResourceResultWarningDescription"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:name>goblintResultWarningDescription</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResultWarning"/>
+  </rdf:Description>
+    
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">The line with which the warning is associated with.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">goblintResultWarningLine</dcterms:title>
+    <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <oslc:propertyDefinition rdf:resource="goblint:GoblintResourceResultWarningLine"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:name>goblintResultWarningLine</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResultWarning"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">The file with which the warning is associated with.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">goblintResultWarningFile</dcterms:title>
+    <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <oslc:propertyDefinition rdf:resource="goblint:GoblintResourceResultWarningFile"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:name>goblintResultWarningFile</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResultWarning"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">Analysis result in XML form.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">goblintResultXML</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+    <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+    <oslc:propertyDefinition rdf:resource="goblint:GoblintResourceResultXML"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:name>goblintResultXML</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResultXML"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">Analysis result in HTML form.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">goblintResultHTML</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+    <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+    <oslc:propertyDefinition rdf:resource="goblint:GoblintResourceResultHTML"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:name>goblintResultHTML</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResultHTML"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">Analysis result in stored invariant form.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">goblintResultStoredInvariantAsset</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:GoblintResourceResultStoredInvariantAsset"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:name>goblintResultStoredInvariantAsset</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResultStoredInvariant"/>
+  </rdf:Description>
+        
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">The configuration of the analysis.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">confFile</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+    <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+    <oslc:propertyDefinition rdf:resource="goblint:confFile"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:name>confFile</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintAnalysisJob"/>
+  </rdf:Description>
+
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">The source files to be analyzed.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">sourceFolder</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+    <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+    <oslc:propertyDefinition rdf:resource="goblint:sourceFolder"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+    <oslc:name>sourceFolder</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintAnalysisJob"/>
+  </rdf:Description>
+
+  <rdf:Description >
+    <dcterms:description rdf:parseType="Literal">An invariant asset that holds for the analysis.</dcterms:description>
+    <dcterms:title rdf:parseType="Literal">storedInvariant</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+    <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+    <oslc:propertyDefinition rdf:resource="goblint:storedInvariant"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+    <oslc:name>storedInvariant</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintAnalysisJob"/>
+  </rdf:Description>
+                
+  <rdf:Description >
+    <dcterms:title rdf:parseType="Literal">sourceFolders</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:sourceFolders"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-many"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>sourceFolders</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResource"/>
+  </rdf:Description>
+    
+  <rdf:Description >
+    <dcterms:title rdf:parseType="Literal">storedInvariants</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:storedInvariants"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-many"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>storedInvariants</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResource"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:title rdf:parseType="Literal">analysisJobs</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:analysisJobs"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-many"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>analysisJobs</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResource"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:title rdf:parseType="Literal">resultXML</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:resultXML"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-many"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>resultXML</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResource"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:title rdf:parseType="Literal">confFiles</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:confFiles"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-many"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>confFiles</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResource"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:title rdf:parseType="Literal">resultStoredInvariants</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:resultStoredInvariants"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-many"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>resultStoredInvariants</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResource"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:title rdf:parseType="Literal">resultHTML</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:resultHTML"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-many"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>resultHTML</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResource"/>
+  </rdf:Description>
+  
+  <rdf:Description >
+    <dcterms:title rdf:parseType="Literal">resultWarnings</dcterms:title>
+    <oslc:valueType rdf:resource="http://open-services.net/ns/core#LocalResource"/>
+    <oslc:propertyDefinition rdf:resource="goblint:resultWarnings"/>
+    <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-many"/>
+    <oslc:readOnly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oslc:readOnly>
+    <oslc:name>resultWarnings</oslc:name>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#Property"/>
+    <rdfs:domain rdf:resource="goblint:GoblintResource"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="A1">
+    <oslc:resourceShape rdf:resource="goblint:GoblintResource"/>
+    <dcterms:title rdf:parseType="Literal">Goblint ResultHTML Factory</dcterms:title>
+    <oslc:creation rdf:resource="goblint:createResultHTML"/>
+    <oslc:label>Goblint ResultHTML Creation</oslc:label>
+    <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+    <oslc:resourceType rdf:resource="http://open-services.net/ns/asset#Asset"/>
+    <oslc:resourceType rdf:resource="goblint:ResultHTML"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#CreationFactory"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="A2">
+    <oslc:resourceShape rdf:resource="goblint:GoblintResource"/>
+    <dcterms:title rdf:parseType="Literal">Goblint Analysis Job Factory</dcterms:title>
+    <oslc:creation rdf:resource="goblint:runAnalysisJob"/>
+    <oslc:label>Goblint Analysis Job Creation</oslc:label>
+    <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+    <oslc:resourceType rdf:resource="http://open-services.net/ns/asset#Asset"/>
+    <oslc:resourceType rdf:resource="goblint:AnalysisJob"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#CreationFactory"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="A3">
+    <oslc:resourceShape rdf:resource="goblint:GoblintResource"/>
+    <dcterms:title rdf:parseType="Literal">Goblint ResultXML Factory</dcterms:title>
+    <oslc:creation rdf:resource="goblint:createResultXML"/>
+    <oslc:label>Goblint ResultXML Creation</oslc:label>
+    <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+    <oslc:resourceType rdf:resource="http://open-services.net/ns/asset#Asset"/>
+    <oslc:resourceType rdf:resource="goblint:ResultXML"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#CreationFactory"/>
+  </rdf:Description>
+   
+  <rdf:Description rdf:nodeID="A4">
+    <oslc:resourceShape rdf:resource="goblint:GoblintResource"/>
+    <dcterms:title rdf:parseType="Literal">Goblint ResultWarning Factory</dcterms:title>
+    <oslc:creation rdf:resource="goblint:createResultWarning"/>
+    <oslc:label>Goblint ResultWarning Creation</oslc:label>
+    <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+    <oslc:resourceType rdf:resource="http://open-services.net/ns/asset#Asset"/>
+    <oslc:resourceType rdf:resource="goblint:ResultWarning"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#CreationFactory"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="A5">
+    <oslc:resourceShape rdf:resource="goblint:GoblintResource"/>
+    <dcterms:title rdf:parseType="Literal">Goblint ConfFile Factory</dcterms:title>
+    <oslc:creation rdf:resource="goblint:createConfFile"/>
+    <oslc:label>Goblint ConfFile Creation</oslc:label>
+    <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+    <oslc:resourceType rdf:resource="http://open-services.net/ns/asset#Asset"/>
+    <oslc:resourceType rdf:resource="goblint:ConfFileAsset"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#CreationFactory"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="A6">
+    <oslc:resourceShape rdf:resource="goblint:GoblintResource"/>
+    <dcterms:title rdf:parseType="Literal">Goblint SourceFolders Factory</dcterms:title>
+    <oslc:creation rdf:resource="goblint:createSourceFolders"/>
+    <oslc:label>Goblint SourceFolder Creation</oslc:label>
+    <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+    <oslc:resourceType rdf:resource="http://open-services.net/ns/asset#Asset"/>
+    <oslc:resourceType rdf:resource="goblint:SourceFolderAsset"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#CreationFactory"/>
+  </rdf:Description>
+  
+  <rdf:Description rdf:nodeID="A7">
+    <oslc:resourceShape rdf:resource="goblint:GoblintResource"/>
+    <dcterms:title rdf:parseType="Literal">Goblint ResultStoredInvariant Factory</dcterms:title>
+    <oslc:creation rdf:resource="goblint:createResultStoredInvariant"/>
+    <oslc:label>Goblint ResultStoredInvariant Creation</oslc:label>
+    <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+    <oslc:resourceType rdf:resource="http://open-services.net/ns/asset#Asset"/>
+    <oslc:resourceType rdf:resource="goblint:ResultStoredInvariant"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/core#CreationFactory"/>
+  </rdf:Description>
+  
+</rdf:RDF>
